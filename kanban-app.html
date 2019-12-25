@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Seetoh Yong Qiang</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Back to Home Page</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+                            <li class="active"><a href="kanban-app.html">Kanban App</a></li>
+							<li><a href="shopping-cart.html">Shopping Cart</a></li>
+							<li><a href="tic-tac-toe.html">Tic-tac-toe Game</a></li>
+						</ul>
+						<ul class="icons">
+                            <li><a href="https://www.linkedin.com/in/seetohyongqiang/" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li>
+                            <li><a href="https://github.com/seetohyq" class="icon fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Kanban App</h1>
+								</header>
+
+								<!-- Text stuff -->
+									<h2>Overview</h2>
+                                    <p>A Kanban-style task-listing web application built using Angular 8, Node.js/Express and MySQL/MongoDB/AWS S3.
+									WebSocket is used to allow team members who are on the application at the same time to see live updates. </p>
+									<p>Key features: </p>
+									<ul>
+										<li>Create taskboard and rename it</li>
+										<li>Delete taskboard</li>
+										<li>Create tasks under taskboard</li>
+										<li>Update task progress status</li>
+										<li>Update task details such as title, description, checklist items, due date and assigned to</li>
+										<li>Delete task</li>
+									</ul>
+									<video class="image fit" controls autoplay>
+										<source src="images/kanban-app/kanban-app-demo.mp4" type="video/mp4">
+									  Your browser does not support the video tag.
+									</video>
+
+									<p>Application is deployed on: <a href="https://kanban-boards.now.sh" target="_blank">https://kanban-boards.now.sh</a> 
+									<p>Source codes at: <a href="https://github.com/SeetohYQ/kanban-app" target="_blank">https://github.com/SeetohYQ/kanban-app</a> (client) and <a href="https://github.com/SeetohYQ/kanban-app-server" target="_blank">https://github.com/SeetohYQ/kanban-app-server</a> (server)</p>
+
+                                    <header>
+                                        <h2>Home Page</h2>
+										<p>Before user can access the key features in main app, he/she has to first register for a new account or log in existing account.</p>
+										<h3>Login</h3>
+										<p>User enters login credentials and if authenticated, will be re-directed to main app. Otherwise, an error message will show.</p>
+                                        <span class="image fit"><img src="images/kanban-app/home-page.png" alt="" /></span>
+										<span class="image fit"><img src="images/kanban-app/login-error.png" alt="" /></span>
+										
+                                        <h3>Register new account</h3>
+                                        <p>User has to provide all required fields before he/she can submit the form.</p>
+                                        <span class="image fit"><img src="images/kanban-app/create-account-validation.png" alt="" /></span>
+                                        <span class="image fit"><img src="images/kanban-app/create-account.png" alt="" /></span>
+                                    </header>
+                                    
+                                    <header>
+										<h2>Security Considerations</h2>
+                                        <ul>
+											<li>Mode: JSON Web Token (JWT)</li>
+											<li>After user logs in and is authenticated, server issues token to client, which is stored on <strong>browser's local storage</strong>. Application will time out and exit based on the token expiration duration (set at 15 mins)</li>
+											<li>User will not be able to access the protected routes directly by keying in url, if he/she is <strong>not authenticated</strong> or <strong>has been authenticated but token has expired</strong>. The protected routes are: /taskboards, /taskboards/create?status=[status] and /user/update</li>
+											<li>Checks that token is still valid as user navigates between protected routes</li>
+											<li>Takes care of malicious attacks like manually saving 'user_data' i.e. the token details' key into browser's local storage and accessing protected routes directly and causing app crash</li>
+                                        <ul>
+									</header>
+									
+									<header>
+										<h2>Database Design</h2>
+										<p>MongoDB: JWT tokens</p>
+										<p>AWS S3: Users' profile pictures</p>
+										<p>MySQL: Taskboard-related (ERD below)</p>
+										<span class="image fit"><img src="images/kanban-app/ERD_15Dec2019.jpg" alt="" /></span>
+                                    </header>
+									
+									<hr />
+
+
+							</section>
+
+					</div>
+				
+				<!-- Footer -->
+                <footer id="footer">
+						<section class="split contact">
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto:seetohyongqiang@gmail.com">seetohyongqiang@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/seetohyongqiang/" class="icon alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+									<li><a href="https://github.com/seetohyq" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+                <div id="copyright">
+						<ul><li>&copy; SeetohYongQiang</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
